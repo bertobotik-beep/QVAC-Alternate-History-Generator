@@ -1,0 +1,25 @@
+{
+  "name": "qvac-alternate-history-generator",
+  "version": "1.0.0",
+  "description": "Enter a real historical event and an on-device AI writes a short speculative 'what if it had gone differently' paragraph, clearly framed as fiction. No cloud call, no API key.",
+  "type": "module",
+  "main": "src/gui.js",
+  "scripts": {
+    "start": "node src/gui.js",
+    "gui": "node src/gui.js"
+  },
+  "keywords": [
+    "qvac",
+    "on-device-ai",
+    "alternate-history",
+    "llm",
+    "offline-ai"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@qvac/sdk": "^0.19.0"
+  },
+  "engines": {
+    "node": ">=22.17"
+  }
+}
