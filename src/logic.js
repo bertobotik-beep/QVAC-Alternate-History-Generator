@@ -78,6 +78,10 @@ export async function generate(modelId, event) {
     .replace(/^["'“]|["'”]$/g, "")
     .trim();
 
+  // Fall back to a deterministic, clearly-speculative paragraph whenever the
+  // model refused, rambled, or produced text with no keyword overlap with
+  // the requested event — this keeps every result grounded and safe even if
+  // the on-device model produces a bad completion.
   let speculation = looksUnusable(text) || !isGrounded(text, event) ? FALLBACK(event) : text;
 
   // Deterministic safety net: never let the output leave without an explicit
